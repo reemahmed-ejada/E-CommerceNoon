@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Noon Automation Suite">
+    <test name="Search Tests">
+        <classes>
+            <class name="TestCases.SearchTest"/>
+        </classes>
+    </test>
+</suite>
