@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class SearchPage {
 
@@ -14,7 +13,7 @@ public class SearchPage {
     private By searchBox = By.cssSelector("input[class='DesktopInput_searchInput__R44H1']");
     private By searchButton = By.cssSelector("button[type='submit']");
 
-     private By filterDropdown = By.cssSelector("div.filter-dropdown");
+    private By filterDropdown = By.cssSelector("div.filter-dropdown");
 
     private By brand = By.xpath("//span[text()='Brand']");
 
@@ -39,9 +38,11 @@ public class SearchPage {
         searchInput.sendKeys(Keys.ENTER);
 
     }
+
     public void clickEnterButton() {
-       // driver.sendKeys(Keys.ENTER);
+        // driver.sendKeys(Keys.ENTER);
     }
+
     public void clickSearchButton() {
         driver.findElement(searchButton).click();
     }

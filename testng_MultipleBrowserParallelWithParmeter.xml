@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+
+    <test name="test">
+        <parameter name="drivervalue" value="chrome"></parameter>
+    <classes>
+        <class name="TestCases.MultipleBrowserParallelUsingParameters">
+    </class>
+    </classes>
+    </test>
+
+    <test name="test1">
+        <parameter name="drivervalue" value="firefox"></parameter>
+        <classes>
+        <class name="TestCases.MultipleBrowserParallelUsingParameters">
+        </class>
+       </classes>
+  </test>
+
+    <test name="test2">
+        <parameter name="drivervalue" value="edge"></parameter>
+      <classes>
+        <class name="TestCases.MultipleBrowserParallelUsingParameters">
+            <methods><include name="TestMultiple"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>

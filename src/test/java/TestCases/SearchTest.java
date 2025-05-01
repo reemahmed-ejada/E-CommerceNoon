@@ -1,13 +1,21 @@
 package TestCases;
 
-import base.BaseTest;
+import base.BasePage;
 import Pages.SearchPage;
+import com.aventstack.extentreports.Status;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SearchTest extends BaseTest {
+import static utils.ExtentReportManager.extent;
 
-    @Test
+public class SearchTest extends BasePage {
+
+    @BeforeMethod
+    public void initTest(){
+      //  setUp();
+    }
+    @Test(groups = {"Sanity"})
     public void testSearchFunctionality() {
         SearchPage searchPage = new SearchPage(driver);
 
@@ -35,12 +43,21 @@ public class SearchTest extends BaseTest {
 
     @Test
     public void testSearchWithprice() {
-        SearchPage searchPage = new SearchPage(driver);
-        // call the function will apply search and then filter the brand
-        searchPage.FilterwithPrices("laptop");
 
-        //  Verify if the search results have the filter applied
-        String pageTitle = searchPage.getSearchResult();
-        Assert.assertTrue(pageTitle.contains("laptop"), "Search results are not correct after applying filter");
+       // extentTest = extent.createTest("Login Test");
+        //extentTest.log(Status.INFO, "Starting login test");
+        //try {
+            SearchPage searchPage = new SearchPage(driver);
+            // call the function will apply search and then filter the brand
+            searchPage.FilterwithPrices("laptop");
+
+            //  Verify if the search results have the filter applied
+            String pageTitle = searchPage.getSearchResult();
+            Assert.assertTrue(pageTitle.contains("laptop"), "Search results are not correct after applying filter");
+            extentTest.log(Status.PASS, "Login successful");
+        //} catch (Exception e) {
+          //  extentTest.log(Status.FAIL, "Login failed");
+            //throw e;
+        //}
     }
 }
